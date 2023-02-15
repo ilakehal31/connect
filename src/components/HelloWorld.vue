@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import Text from './atoms/Text.vue'
 
 defineProps<{ msg: string, test: number}>()
 
@@ -10,6 +11,8 @@ const count = ref(0)
   <h1>{{ msg }}</h1>
 
   <h1>{{ test }}</h1>
+
+  <Text tag="h2" bold="blue">Medhi 1</Text>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>

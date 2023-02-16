@@ -1,14 +1,14 @@
 <template>
-  <div :class="textClasses">
+  <component :is="tag" :class="textClasses" class="text">
     <slot />
-  </div>
+  </component>
 </template>
   
-<script lang="ts">
-import { defineProps, computed } from "vue";
+  <script lang="ts">
+import { computed } from "vue";
 
 export default {
-  props: defineProps({
+  props: {
     tag: {
       type: String,
       default: "span",
@@ -21,8 +21,8 @@ export default {
     italic: {
       type: Boolean,
       default: false,
-    }
-  }),
+    },
+  },
 
   setup(props) {
     const textClasses = computed(() => {
@@ -46,6 +46,33 @@ export default {
 </script>
   
   <style scoped>
-/* Add your global styles here */
+.text {
+  display: block;
+  line-height: 1.5;
+  color: #333;
+}
+
+.text h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.text h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text.font-bold {
+  font-weight: bold;
+}
+
+.text.italic {
+  font-style: italic;
+}
 </style>
   

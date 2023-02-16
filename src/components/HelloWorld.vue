@@ -12,7 +12,7 @@ const count = ref(0)
 
   <h1>{{ test }}</h1>
 
-  <Text tag="h2" bold="blue">Medhi 1</Text>
+  <Text tag="h3" italic>Medhi 1</Text>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
